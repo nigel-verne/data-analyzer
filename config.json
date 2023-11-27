@@ -1,0 +1,188 @@
+{
+    "settings": {
+        "system_name": "AST2",
+        "data_directory": "ast2_data",
+        "derived_values_enabled": true,
+        "plotting_enabled": true,
+        "merge_data_enabled": false
+    },
+    "AST1": {
+        "system_specifications": {
+            "Tank Volume (L)": 445,
+            "Surface Area (m^2)": 45
+        },
+        "sensors": {
+            "Temperature (K)": {
+                "TT-710": "TT-710: Inlet Temp (K)",
+                "TT-711": "Inlet Temp Post CV-701 (K)",
+                "TT-712": "BOP Inlet Temp (K)",
+                "TT-741": "Fill Tube Temp (K)",
+                "TT-742": "Insert Temp (K)",
+                "TT-743": "Plug Temp A (K)",
+                "TT-744": "Plug Temp B (K)",
+                "TT-791": "SV-762 Vent Temp (K)",
+                "TT-792": "XV-762 Vent Temp (K)",
+                "TT-793": "Outlet Temp (K)",
+                "TT-794": "EV-762 Vent Temp (K)"
+            },
+            "Pressure (Bar)": {
+                "PT-711": "Storage Pressure A (Bar)",
+                "PT-712": "Storage Pressure B (Bar)"
+            },
+            "Vacuum Pressure (mTorr)": {
+                "VG-781": "Manifold Vacuum Pressure (mTorr)",
+                "VG-782": "Vacuum Pressure (mTorr)"
+            },
+            "Other": {
+                "XV-709 POS": "Solenoid Valve Position (On/Off)",
+                "EV-762 POS": "Outlet Hand Valve Position (On/Off)"
+            }
+        },
+        "values_to_derive": {
+            "Storage Average Temp (K)": [
+                "TT-743",
+                "TT-744"
+            ],
+            "Hydrogen Density (g/L)": {
+                "Temperature Data": "AVG-T",
+                "Pressure Data": "PT-712"
+            }
+        }
+    },
+    "MTS": {
+        "system_specifications": {
+            "Tank Volume (L)": 84,
+            "Surface Area (m^2)": 1.94
+        },
+        "sensors": {
+            "Temperature (K)": {
+                "TT-761": "Inlet Temp (K)",
+                "TT-711": "Left Tank Inlet Temp (K)",
+                "TT-712": "Left Tank Plug Temp (K)",
+                "TT-721": "Right Tank Inlet Temp (K)",
+                "TT-722": "Right Tank Plug Temp (K)",
+                "TT-791": "HX Inlet Temp (K)",
+                "TT-792": "HX Outlet Temp A (K)",
+                "TT-793": "HX Outlet Temp B (K)",
+                "TT-794": "XV-791 Vent Temp (K)"
+            },
+            "Pressure (Bar)": {
+                "PT-711": "Storage Zone Pressure (Bar)",
+                "PT-791": "HX Zone Pressure (Bar)"
+            },
+            "Vacuum Pressure (mTorr)": {
+                "VG-781": "Vacuum Pressure (mTorr)"
+            },
+            "Other": {
+                "VFR": "Volumetric Flow Rate (L/s)",
+                "MFR": "Mass Flow Rate (g/s)"
+            }
+        },
+        "values_to_derive": {
+            "Sensor Correction Factors": {
+                "PT-711": 0.91,
+                "PT-791": 0.91
+            },
+            "Storage Average Temp (K)": [
+                "TT-711",
+                "TT-712",
+                "TT-721",
+                "TT-722"
+            ],
+            "Hydrogen Density (g/L)": {
+                "Temperature Data": "AVG-T",
+                "Pressure Data": "PT-711"
+            }
+        }
+    },
+    "TSN": {
+        "sensors": {
+            "Temperature (K)": {
+                "TE302": "Upper Block Temp (K)",
+                "TE305": "Middle Block Temp (K)",
+                "TE307": "Lower Block Temp (K)",
+                "TE311": "Hydrogen Inlet Temp (K)",
+                "TE319": "Hydrogen Outlet Temp (K)",
+                "TE321": "Nitrogen Inlet Temp (K)",
+                "TE329": "Nitrogen Outlet Temp (K)"
+            },
+            "Pressure (bar)": {
+                "PT311": "Hydrogen Inlet Pressure (Bar)",
+                "DP315": "Hydrogen Differential Pressure (Bar)",
+                "PT320": "Nitrogen Pressure A (Bar)",
+                "PT321": "Nitrogen Pressure B (Bar)",
+                "DP325": "Nitrogen Differential Pressure (Bar)"
+            },
+            "Alarms and Interlocks": {
+                "TE311_Hi": "Hydrogen Inlet Temp High Alarm",
+                "DP315_Hi": "Hydrogen Differential Pressure High Alarm",
+                "TE319_Hi": "Hydrogen Outlet Temp High Alarm",
+                "PT320_Hi": "Nitrogen Pressure A High Alarm",
+                "PT321_Hi": "Nitrogen Pressure B High Alarm",
+                "DP325_Hi": "Nitrogen Differential Pressure High Alarm",
+                "TE329_Lo": "Nitrogen Outlet Temp Low Alarm",
+                "XV312_Interlock": "XV-312 Interlock True",
+                "XV311_Interlock": "XV-311 Interlock True",
+                "XV321_Interlock": "XV-321 Interlock True",
+                "XV312": "XV-312 Open",
+                "XV311": "XV-311 Open",
+                "XV321": "XV-321 Open",
+                "NREL_STATUS": "NREL C-Stop True",
+                "TSN1_STEP": "TSN1 Start Sequence Step"
+            },
+            "Other": {
+                "FT_NREL": "Hydrogen Mass Flow Rate (g/s)",
+                "FT321": "Nitrogen Mass Flow Rate (g/s)",
+                "N2Avg": "Rolling Median Nitrogen Mass Flow Rate (g/s)"
+            }
+        },
+        "values_to_derive": {
+            "Inlet Hydrogen Density (g/L)": {
+                "Temperature Data": "TE311",
+                "Pressure Data": "PT311"
+            },
+            "Outlet Hydrogen Density (g/L)": {
+                "Temperature Data": "TE319",
+                "Pressure Data": "PT311"
+            }
+        }
+    },
+    "AST2": {
+        "system_specifications": {
+            "Tank Volume (L)": 445,
+            "Surface Area (m^2)": 45
+        },
+        "sensors": {
+            "Temperature (K)": {
+                "TT_711": "Inlet Temp Post CV_701 (K)",
+                "TT_712": "BOP Inlet Temp (K)",
+                "TT_741": "Fill Tube Temp (K)",
+                "TT_742": "Insert Temp (K)",
+                "TT_743": "Plug Temp A (K)",
+                "TT_744": "Plug Temp B (K)",
+                "TT_791": "SV_762 Vent Temp (K)",
+                "TT_792": "XV_762 Vent Temp (K)",
+                "TT_793": "Outlet Temp (K)"
+            },
+            "Pressure (Bar)": {
+                "PT_711": "Storage Pressure A (Bar)",
+                "PT_712": "Storage Pressure B (Bar)",
+                "PT_AVERAGE": "Average Pressure (Bar)"
+            },c
+            "Vacuum Pressure (mTorr)": {
+                "VG_782": "Vacuum Pressure (mTorr)"
+            },
+            "Other": {
+                "solenoid": "Solenoid Valve Position (On/Off)",
+                "parker_hanbay": "Outlet Hand Valve Position (0-100)",
+                "dragon_hanbay": "Outlet Hand Valve Position (0-100)",
+                "venting_enabled" : "Venting Enabled (On/Off)",
+                "vent_rate": "Desired vent rate",
+                "desired_hydrogen" : "desired H2",
+                "actual_hydrogen": "Actual H2"
+            }
+        },
+        "values_to_derive": {
+        }
+    }
+}
